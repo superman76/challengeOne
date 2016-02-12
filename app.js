@@ -6,33 +6,36 @@ var personThree = {firstName: "sue", lastName: "johnson", phoneNumber: '404-335-
 
 var people = [personOne, personTwo, personThree];
 
-var $list = $('#toDoTable');
-toDos.forEach(function(toDo){
-	addRowToTable($list, toDo);
+var $list = $('#addPersonTable');
+addPersons.forEach(function(addPerson){
+	addRowToTable($list, addPerson);
 })
 
-function addToDo(event) {
-	var toDo = {};
-	toDo.name = $('#taskName').val();
-	toDo.date = $('#dueDate').val();
+function addaddPerson(event) {
+	var addPerson = {};
+	addPerson.firstName = $('#taskName').val();
+	addPerson.lastName = $('#taskName').val();
+	addPerson.phoneNumber = $('#dueDate').val();
 
-	if(toDo.name && toDo.date) {
-		var $list = $('#toDoTable');
-		addRowToTable($list, toDo);
+	if(addPerson.firstName && addPerson.lastName && addPerson.phoneNumber) {
+		var $list = $('#addPersonTable');
+		addRowToTable($list, addPerson);
 	}
 	console.log('Submitted with ', taskName, 'and', dueDate);
 	return false;
 }
 
-function addRowToTable($list, toDo) {
-	$list.append('<tr><td>' + toDo.name + '</td><td>' + toDo.date + '</td><td><button type="button"class="btn btn-primary deleteToDo">Delete</button></td></tr>');
+function addRowToTable($list, addPerson) {
+	$list.append('<tr><td>' + addPerson.firstName + '</td> \
+		<td>' + addPerson.lastName + '</td><td>' + addPerson.date + '</td> \
+		<td><button type="button"class="btn btn-primary deleteaddPerson">Delete</button></td></tr>');
 }
 
-function deleteToDo(event) {
+function deleteaddPerson(event) {
 	var $button = $(event.target);
 	$button.closest('tr').remove();
 
 }
 
-$('#submit-button').on('click', addToDo);
-$('.deleteToDo').on('click', deleteToDo);
+$('#submit-button').on('click', addPerson);
+$('.deleteaddPerson').on('click', deletePerson);
