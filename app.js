@@ -4,6 +4,9 @@ var personThree = {firstName: "sue", lastName: "johnson", phoneNumber: '404-335-
 
 var people = [personOne, personTwo, personThree];
 
+person.forEach(function (personOne, personTwo, personThree) {
+	console.log(personOne, personTwo, personThree)
+});
 
 
 
@@ -16,3 +19,10 @@ var people = [personOne, personTwo, personThree];
 // 7) Give the form functionality - when the user clicks submit - an 
 // alert pops up that contains the information in the fields. (BONUS: 
 // 	Append the content to the page)
+// basic table, no buttons, try to get the data from the app.js to render
+
+// fruits.forEach(function (item, index, array) {
+//   console.log(item, index);
+// });
+// Apple 0
+// Banana 1
